@@ -17,12 +17,14 @@ public class ReyCast : MonoBehaviour {
     {
         CheckForShooting();
     }
+
+
     private void CheckForShooting()
     {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-
+            
 
             if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity))
             {
@@ -33,7 +35,9 @@ public class ReyCast : MonoBehaviour {
 
                 if (hit.collider.tag == "Enemy")
                 {
-                    Destroy(hit.collider.gameObject);
+                    EnemyHealth eHealth = hit.collider.GetComponent<EnemyHealth>();
+                    eHealth.TakeDamage(10);
+                    //Destroy(hit.collider.gameObject);
 
                 }
 

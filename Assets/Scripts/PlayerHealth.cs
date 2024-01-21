@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour {
     public int startingHealth = 100;                            
     public int currentHealth;                                   
     public Slider healthSlider;
-    public Text gameOverText;                           
+    public Text gameOverText;                    
 
 
     bool isDead;
@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour {
 
         // Reduce the current health by the damage amount.
         currentHealth -= amount;
-
         // Set the health bar's value to the current health.
         healthSlider.value = currentHealth;
 
